@@ -1,0 +1,25 @@
+Notas - curso GIT y GITHUB
+
+¿Que es?
+sistema de control de versiones (VCS). Con repositorios destribuidos, es decir, permite tener una copia del repositorio
+en linea en nustroi computador, modificarlo y enviarlo al repositorio en linea.
+
+cambiar contenido de un archivo -> commit
+traer todo lo que hay en un repositorio remoto hacia nuestro computador -> git pull
+agregar las actualizaciones -> git add <file>... ejemplo git add index.html (con el . señala a todos los archios dentro de esa carpeta)
+para subir y comentar las actualizaciones realizadas -> git commit -m "escribir descripcion"
+para subir el todo al repositorio en linea -> git push origin main
+actualizar git -> git update-git-for-windows
+Inicializa un repositorio en el directorio donde se ejecuta el comando -> git init 
+dejar de monitorear ese archivo -> git rm --cached <file>...
+Ver historial de commits -> git log
+
+Solo para aclarar un poco, ya que entenderemos mejor cómo funciona Git durante el curso, aquí hay algunas definiciones interesantes:
+
+HEAD: Estado actual de nuestro código, es decir, donde nos colocó Git
+Working tree: Lugar donde los archivos realmente están siendo almacenados
+index: Lugar donde Git almacena lo que será commiteado, es decir, la ubicación 
+entre el working tree y el repositorio de Git en sí.
+
+
+https://devhints.io/git-log
