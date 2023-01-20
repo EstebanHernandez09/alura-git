@@ -13,6 +13,7 @@ actualizar git -> git update-git-for-windows
 Inicializa un repositorio en el directorio donde se ejecuta el comando -> git init 
 dejar de monitorear ese archivo -> git rm --cached <file>...
 Ver historial de commits -> git log
+para pasar a una branch -> git checkout <nombre branch>
 
 Solo para aclarar un poco, ya que entenderemos mejor cómo funciona Git durante el curso, aquí hay algunas definiciones interesantes:
 
