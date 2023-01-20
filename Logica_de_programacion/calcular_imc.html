@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+
+<h1>Programa calcular IMC</h1>
+
+<script>
+
+    function saltarLinea() {
+
+        document.write("<br><br>");
+        
+    }
+
+    function imprimir(mensaje) {
+        saltarLinea();
+        document.write(mensaje);
+    }
+
+    function calcularImc(pesoPersona,alturaPersona){
+
+        imcPersona = pesoPersona / (alturaPersona * alturaPersona);
+
+        return imcPersona;
+        
+    }
+
+    nombrePersona = prompt("Ingrese su nombre");
+    pesoPersona = prompt(nombrePersona + " ingrese su peso");
+    alturaPersona = prompt(nombrePersona + " ingrese su altura");
+    imcCalculado = calcularImc(pesoPersona,alturaPersona);
+    
+    imprimir("El Indice de Masa Corporal de " + nombrePersona +" es "+ imcCalculado);
+    //imcPersona = pesoPersona / (alturaPersona * alturaPersona);
+
+    imprimir("Segun la clasificacion del IMC de la OMS usted se encuentra en ");
+
+    if(imcCalculado < 18.5){
+        imprimir("Insuficiencia ponderal");
+    }if(imcCalculado >= 18.5 && imcCalculado <= 24.9){
+        imprimir("Intervalo normal");
+    }if(imcCalculado >= 25.0 && imcCalculado < 30.0){
+        if(imcCalculado >= 25.0 && imcCalculado <= 29.9){
+            imprimir("Sobrepeso - preobesidad");
+        }
+    }if(imcCalculado >= 30.0){
+        if(imcCalculado >= 30.0 && imcCalculado <= 34.9){
+            imprimir("Obesidad - Obesidad clase I");
+        }if(imcCalculado >= 35.0 && imcCalculado <= 39.9){
+            imprimir("Obesidad - Obesidad clase II");
+        }if(imcCalculado >= 40.0){
+            imprimir("Obesidad - Obesidad clase III");
+        }
+    }
+
+</script>

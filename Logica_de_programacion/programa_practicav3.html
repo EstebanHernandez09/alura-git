@@ -1,0 +1,29 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400);
+
+    function dibujarCirculo(event){
+
+        var x = event.pageX - pantalla.offsetLeft;
+        var y = event.pageY - pantalla.offsetTop;
+
+
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+        console.log("usted hizo un clic en las cordenadas x: "+ x+" y: "+ y)
+
+    }
+
+    //pantalla.onclick = exibirAlerta; //no se necesita poner parentesis en este caso!!
+    
+    pantalla.onclick = dibujarCirculo;
+
+</script>

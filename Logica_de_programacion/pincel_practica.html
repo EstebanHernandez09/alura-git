@@ -1,0 +1,95 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0,0, 600, 400);
+
+    //Variables para dibujar la paleta
+    var xRojo = 0;
+    var xVerde  = 50;
+    var xAzul = 100;
+    var yCuadrados = 0;
+    var tamanoCuadrados = 50;
+
+    var colores = ["red", "green", "blue"];
+
+    var puedoDibujar = false;
+    var color = 2;
+
+    //Función para dibujar cada uno de los cuadrados de la paleta
+    function dibujarCuadrado(x, y, tamano, color) {
+
+        pincel.fillStyle = color;
+        pincel.fillRect(x, y, tamano, tamano);
+        pincel.fill();
+
+    }
+
+    //Función para dibujar la paleta de colores
+    function dibujarPaletaColores() {
+
+        dibujarCuadrado(xRojo, yCuadrados, tamanoCuadrados, 'red');
+        dibujarCuadrado(xVerde, yCuadrados, tamanoCuadrados, 'green');
+        dibujarCuadrado(xAzul, yCuadrados, tamanoCuadrados, 'blue');
+
+    }
+
+
+    function dibujarCirculo(evento) {
+        if(puedoDibujar) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            pincel.fillStyle = colores[color];
+            console.log(colores[color]);
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();
+        }
+
+    }
+
+    pantalla.onmousemove = dibujarCirculo;
+
+    function habilitarDibujar() {
+
+        puedoDibujar = true;
+    }
+
+    function deshabilitarDibujar() {
+
+        puedoDibujar = false;
+    }
+
+
+//funcion para cambiar el color por medio de las validadiones, dependiendo las coordenadas obtenidas al dar clic
+    function cambiarColor (evento){
+
+        var xcolor = evento.pageX - pantalla.offsetLeft;
+        var ycolor = evento.pageY - pantalla.offsetTop;
+
+        if(xcolor <= 50 && xcolor >= 0 && ycolor <= 50 && ycolor >= 0){
+            color = 0;
+        }
+
+        if(xcolor <= 100 && xcolor >= 51 && ycolor <= 50 && ycolor >= 0){
+            color = 1;
+        }
+        
+        if(xcolor <= 200 && xcolor >= 101 && ycolor <= 50 && ycolor >= 0){
+            color = 2;
+        }
+        //console.log("x: "+ x+ " y: "+ y);
+    }
+
+    dibujarPaletaColores();
+
+    pantalla.onmousedown = habilitarDibujar;
+
+    pantalla.onmouseup = deshabilitarDibujar;
+
+    pantalla.onclick = cambiarColor;
+
+</script>

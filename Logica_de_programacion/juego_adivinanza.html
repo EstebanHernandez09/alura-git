@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<h1>Adivina el numero</h1>
+
+<script>
+
+    function saltarLinea() {
+
+        document.write("<br><br>");
+        
+    }
+
+    function imprimir(mensaje) {
+        saltarLinea();
+        document.write(mensaje);
+    }
+
+    function sorteo(n){
+        return Math.round(Math.random() * n);
+    }
+
+    //Se utiliza la libreria math y sus funciones para sacar el numero aleatorio
+    // se multiplica por 10 por que el requerimiento es que sea entre cero y 10
+    var numeroPensado = sorteo(15);
+    var numeroLanzado = parseInt(prompt("Ingrese un numero entre 0 y 15"))
+
+    if(numeroPensado == numeroLanzado){
+
+        imprimir("Felicitaciones acerto!!");
+    
+    }else{
+    
+        imprimir("Fallaste esta vez, el numero era "+ numeroPensado);
+        if(numeroLanzado > numeroPensado){
+            imprimir("El numero que ingresaste es mayor al numero que debias adivinar");
+        }else{
+            imprimir("El numero que ingresaste es menor al numero que debias adivinar");
+        }
+    }
+</script>

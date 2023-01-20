@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<h1>Programa estrellas</h1>
+
+<script>
+
+    function saltarLinea() {
+
+        document.write("<br>");
+        
+    }
+
+    function imprimir(mensaje) {
+        saltarLinea();
+        document.write(mensaje);
+    }
+
+    for (let lineas = 1; lineas <= 3; lineas++) {
+
+        for (let columnas = 1; columnas <= 10; columnas++) {
+            
+            document.write("*");
+            
+        }
+        
+        saltarLinea();
+    }
+
+</script>

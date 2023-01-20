@@ -1,0 +1,85 @@
+<meta charset="UTF-8">
+
+
+<script>
+    document.write("El promedio de edad de Juan, Pedro y Carlos es ");
+    document.write((20+25+15)/3+" Años");
+
+    document.write("<br>Juan nacio en el año ");
+    document.write(2022-20);
+
+    document.write("<br>Pedro nacio en el año ");
+    document.write(2022-25);
+
+    document.write("<br>Carlos nacio en el año ");
+    document.write(2022-15);
+
+    var alno = 2022
+
+    document.write("<br>Juan tiene "+ (alno-2002) + " años");
+
+    document.write("<br>Pedro tiene "+ (alno-1997) + " años");
+
+    alno = 2020
+
+    document.write("<br>Carlos tiene "+ (alno-2007) + " años");
+
+
+    document.write("<br><br><br>Maria tiene "+ (alno-2010) + " años");
+
+    document.write("<br>Sofia tiene "+ (alno-1995) + " años");
+
+    document.write("<br>Andrea tiene "+ (alno-2005) + " años");
+
+    var edadMaria = 10;
+    var edadSofia = 25;
+    var edadAndrea = 15;
+
+    var name1 = "Maria";
+    var name2 = "Sofia";
+    var name3 = "Andrea";
+
+    var promedio = (edadMaria+edadSofia+edadAndrea)/3;
+
+    document.write("<br>El promedio de edad de "+name1+", "+name2 +" y "+name3+" es ");
+    document.write(Math.round(promedio)+" años");
+/*ejercicio propuesto
+    var EDAD1 = 10;
+    var EDAD2 = "20";
+    var EDAD3 = 12;
+    //console.log(EDAD1+EDAD2+EDAD3);
+    document.write("<br><br>La media de las edades es <br>");
+    document.write( (EDAD1 + EDAD2 + EDAD3) / 3);
+
+    alert("La edad de cristian es .....");
+    alert("?");**/
+
+
+    var saltoLinea = "<br><br>";
+    document.write(saltoLinea+saltoLinea+"Maria tiene "+ (alno-2010) + " años");
+
+    document.write(saltoLinea+"Sofia tiene "+ (alno-1995) + " años");
+
+    document.write(saltoLinea+"Andrea tiene "+ (alno-2005) + " años");
+
+    //*******INICIO FUNCIONES*********
+
+    function saltarLinea() {
+        document.write("<br><br><br>");
+    }
+    saltarLinea();
+    saltarLinea();
+    document.write("Maria tiene "+ (alno-2010) + " años");
+    saltarLinea();
+    document.write("Sofia tiene "+ (alno-1995) + " años");
+    saltarLinea();
+    document.write("Andrea tiene "+ (alno-2005) + " años");
+
+    function imprimir(mensaje) {
+        saltarLinea();
+        document.write(mensaje);
+    }
+    
+    imprimir("Esteban - Desarrollador Junior tiene "+ (alno-2000) + " años");
+
+</script>

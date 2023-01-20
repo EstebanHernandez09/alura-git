@@ -1,0 +1,38 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");    
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400); 
+    var i = 0;
+
+    function dibujarCirculo(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop; 
+
+        pincel.fillStyle = colores[i];
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+        console.log(x + "," + y);        
+    }
+
+    function cambiarColor(){
+        if(i >= 2){
+            i = 0;
+            //alert("valor "+ i);
+        }else{
+            i++;
+            //alert("valor "+ i);
+        }
+        return false; // para que el el menu contextual padron no sea exhibido al usuario al dar clic derecho
+    }
+
+    colores = ["blue", "red", "green"];
+
+    pantalla.onclick = dibujarCirculo;
+
+    pantalla.oncontextmenu = cambiarColor;
+
+</script> 

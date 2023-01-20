@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400">
+
+</canvas>
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    //sintaxis fillRect(x, y, width, height)
+
+    pincel.fillStyle = "yellow"; //propiedad/caracteristica
+    pincel.fillRect(0,0,600,180); //funcion
+
+    pincel.fillStyle = "blue"; //propiedad/caracteristica
+    pincel.fillRect(0,180,600,110); //funcion
+
+    pincel.fillStyle = "red"; //propiedad/caracteristica
+    pincel.fillRect(0,290,600,110); //funcion
+    
+    pincel.fillStyle = "green"; //propiedad/caracteristica
+    pincel.beginPath();
+    pincel.moveTo(300,200);
+    pincel.lineTo(200,400);
+    pincel.lineTo(400,400);
+    pincel.fill();
+
+    pincel.fillStyle = "black"; //propiedad/caracteristica
+    pincel.beginPath();
+    pincel.arc(300,200,50,0,2*3.14);
+    pincel.fill();
+
+</script>

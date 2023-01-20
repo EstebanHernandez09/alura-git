@@ -1,0 +1,72 @@
+<meta charset="UTF-8">
+
+<canvas width="480" height="1000">
+
+</canvas>
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    //sintaxis fillRect(x, y, width, height)
+
+    //cuadro 6 (cabeza)
+    pincel.fillStyle = "darkgreen"; //propiedad/caracteristica
+    pincel.fillRect(50,0,350,300); //funcion
+
+    //cuadro 6 (cuerpo)
+    pincel.fillStyle = "darkgreen"; //propiedad/caracteristica
+    pincel.fillRect(100,300,250,950); //funcion
+
+    //cuadro 2 (ojo derecho-pantalla) 
+    pincel.fillStyle = "black"; //propiedad/caracteristica
+    pincel.fillRect(110,70,80,80); //funcion
+
+    //cuadro 3 (ojo izquierdo-pantalla)
+    pincel.fillStyle = "black"; //propiedad/caracteristica
+    pincel.fillRect(260,70,80,80); //funcion
+
+    //cuadro 4 (nariz)
+    pincel.fillStyle = "black"; //propiedad/caracteristica
+    pincel.fillRect(190,150,70,100); //funcion
+
+    //cuadro 5 (bigote derecho-pantalla)
+    pincel.fillStyle = "black"; //propiedad/caracteristica
+    pincel.fillRect(150,190,40,110); //funcion
+
+    //cuadro 6 (bigote izquierdo-pantalla)
+    pincel.fillStyle = "black"; //propiedad/caracteristica
+    pincel.fillRect(260,190,40,110); //funcion
+
+    //cuadro 6 (pies)
+    pincel.fillStyle = "black"; //propiedad/caracteristica
+    pincel.fillRect(100,950,250,50); //funcion
+
+    var acumuladorx=100;
+    var acumuladory = 950;
+
+    
+    for(var j = 0; j < 3; j++){
+
+        for(var i = 0; i < ((250/25)/2); i++){
+
+        console.log("acumulador "+ acumuladorx);
+        console.log("* "+i);
+
+
+        pincel.fillStyle = "#0A5811"; //propiedad/caracteristica
+        pincel.fillRect(acumuladorx,acumuladory,25,25); //funcion
+
+        acumuladorx = acumuladorx + 50;
+        console.log("acumulador2 "+ acumuladorx);
+
+        }
+
+        var acumuladorx=125;
+        var acumuladory=975;
+
+    }
+        
+
+</script>

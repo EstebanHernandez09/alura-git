@@ -1,0 +1,60 @@
+<meta charset="UTF-8">
+
+<h1>Programa adivina el numeros</h1>
+
+<script>
+
+    function saltarLinea() {
+
+        document.write("<br><br>");
+        
+    }
+
+    function imprimir(mensaje) {
+        saltarLinea();
+        document.write(mensaje);
+    }
+
+
+    //Se utiliza la libreria math y sus funciones para sacar el numero aleatorio
+    // se multiplica por 10 por que el requerimiento es que sea entre cero y 10
+    var numeroPensado = Math.round(Math.random() * 15);
+    var intentos = 3;
+    var contador = 1;
+
+    
+
+    while (contador <= intentos){
+
+        var numeroLanzado = parseInt(prompt("Ingrese un numero entre 0 y 15"))
+
+        if(numeroPensado == numeroLanzado){
+
+            alert("Felicitaciones acerto en el intento "+ contador+ " el numero pensado era " + numeroPensado +"!!!");
+            //cerrar el ciclo
+            break;
+
+        }else{
+
+            alert("Fallaste esta vez");
+        
+        }
+
+        contador++;
+    }
+
+    if(numeroPensado == numeroLanzado){
+
+        imprimir("Felicitaciones acerto en el intento "+ contador + " el numero pensado era " + numeroPensado +"!!!");
+   
+    }else{
+
+        imprimir("Fallaste en todos los intentos, el numero era " + numeroPensado);
+
+    }
+
+    imprimir("FIN");
+
+    
+
+</script>
